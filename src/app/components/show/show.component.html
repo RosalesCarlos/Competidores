@@ -1,0 +1,28 @@
+<br>
+<h1 class="titulo">Lista de competidores</h1>
+<br>
+<div class="d-grip gap-2 mt-4">
+  <a routerLink="/create" class="btn btn-primary" type="button">Crear Competidor</a>
+</div>
+<br>
+
+<table class="table table-hover table-striped">
+  <thead class="bg-gradient text-white">
+    <tr>
+      <th>CBU</th>
+      <th>Cuit</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let post of Posts">
+      <td>{{post.cbu}}</td>
+      <td>{{post.cuit}}</td>
+      <td>
+          <button routerLink="/edit/{{post.id}}" class="btn btn-outline-secondary"><i class="fa-solid fa-pen"></i></button>
+          <button (click)="deleteRecord(post)" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>

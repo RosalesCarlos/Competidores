@@ -1,0 +1,23 @@
+<br>
+<h1 class="titulo">Crear datos del competidor</h1>
+<br>
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <div class="mb-3">
+    <label class="form-label">CBU</label>
+    <input formControlName="cbu" type="text" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">CUIT</label>
+    <input formControlName="cuit" type="text" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Certificado de domicilio</label>
+    <br>
+    <input type="file" accept="image/**" class="form-control" (change)="cargarImagen($event)">
+    <img src="{{imagen[0]}}" height="250" width="250">
+  </div>
+
+  <br>
+  <button [disabled]="!postForm.valid" type="submit" class="btn btn-primary">Guardar</button>
+</form>
